@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<style>
+    .green{
+        background-color: green;
+    }
+    .yellow{
+        background-color: yellow;
+    }
+</style>
+<body style="background-color: #212121; color: aliceblue;">
+    <div class="container">
+        <h2 id="heading" class="hello">This is JS challenge</h2>
+        <h2 class="second-heading">Day 9</h2>
+        <ul>
+            <li class="green">Deadpool</li>
+            <li>Batman</li>
+            <li>Daredevil</li>
+        </ul>
+        <h1 id="remove">Remove Me!</h1>
+        <button>Click me</button>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nihil error, natus minus nobis inventore ad ea exercitationem animi porro possimus. Facilis, beatae!</p>
+    </div>
+</body>
+<script>
+    const heading = document.getElementById('heading')
+    heading.style.color = 'green'
+
+    const secondHeading = document.querySelector('.second-heading')
+    console.log(secondHeading);
+    secondHeading.style.backgroundColor = 'orange'
+
+    const newDiv = document.createElement('div')
+    newDiv.innerHTML = "Hello JS USer!"
+    const body = document.querySelector('body')
+    body.appendChild(newDiv)
+
+    const ul = document.querySelector('ul')
+    const newLi = document.createElement('li')
+    newLi.innerHTML = "Gladiator"
+    ul.appendChild(newLi)
+
+    const remove = document.querySelector('#remove')
+    remove.remove()
+
+    const last = document.querySelector('li:last-child')
+    last.parentNode.removeChild(last)
+
+    heading.setAttribute('class','hi')
+    
+
+    const green = document.querySelector('.green')
+    green.classList.remove('green')
+    green.classList.add('yellow')
+
+    const button = document.querySelector('button')
+    const p = document.querySelector('p')
+    button.addEventListener('click',() => {
+        p.innerHTML = 'Content changed'
+    },false)
+    
+    newDiv.style.border = '2px solid red'
+    newDiv.addEventListener('mouseover',function(){
+        newDiv.style.borderColor = 'blue'
+    },false)
+</script>
+</html>

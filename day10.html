@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handling</title>
+</head>
+<style>
+    body{
+        background-color: #212121;
+        color: aliceblue;
+    }
+    h1{
+        background-color: red;
+        text-align: center;
+    
+    }
+</style>
+<body>
+    <p id="para">This paragraph color will changed.</p>
+    <button id="colorButton" style="display: block;">Click me</button>
+    <img style="display: block;" id="toggle" src="download.jpeg" alt="">
+    <button id="imgButton">double click</button>
+    <h1 id="deadpool">Deadpool</h1>
+    <input type="text" name="" id="">
+    <p class="currValue"></p>
+    <form >
+        <input id="data" type="text" placeholder="Enter name">
+        <button type="submit">Submit</button>
+    </form>
+    <select name="Cars" id="dropdown">
+        <option value="Swift">Swift</option>
+        <option value="Scorpio">Scorpio</option>
+        <option value="Honda">Honda</option>
+    </select>
+    <p class="selectPara"></p>
+    <ul>
+        <li>Deadpool</li>
+        <li>Wolverine</li>
+        <li>Johny</li>
+    </ul>
+</body>
+<script>
+    // Activity 1
+    const para = document.getElementById('para')
+    const colorButton = document.getElementById('colorButton')
+    colorButton.addEventListener('click',function(){
+        para.style.color = 'green'
+    },false)
+
+    const imgButton = document.querySelector('#imgButton')
+    const toggle = document.querySelector('#toggle')
+    
+    imgButton.addEventListener('dblclick',function(){
+        if(toggle.style.display === 'block'){
+
+            toggle.style.display = 'none'
+        }
+        else{
+
+            toggle.style.display = 'block'
+        }
+    },false)
+
+    // Activity 2
+    const deadpool = document.querySelector('#deadpool')
+    deadpool.addEventListener('mouseover',function(){
+        deadpool.style.backgroundColor = 'blue'
+    })
+    deadpool.addEventListener('mouseout',function(){
+        deadpool.style.backgroundColor = 'red'
+    })
+
+    // Activity 3
+    const currValue = document.querySelector('.currValue')
+    const input = document.querySelector('input')
+    input.addEventListener('keydown',function(e){
+        console.log(e.key);
+    })
+    input.addEventListener('keyup',function(e){
+        
+        currValue.textContent = e.key
+    })
+
+    //Activity 4
+    const data = document.querySelector('#data')
+    const form = document.querySelector('form')
+    form.addEventListener('submit',function(e){
+        e.preventDefault()
+        console.log(data.value);
+        
+    },false)
+    
+    const selectPara = document.querySelector('.selectPara')
+    const select = document.querySelector('select')
+    select.addEventListener('change',function(e){
+        // console.log(e.target.value);
+        selectPara.innerHTML = e.target.value
+        
+    })
+
+    // Activity 5
+    const ul = document.querySelector('ul')
+    ul.addEventListener('click',function(e){
+        console.log(e.target.textContent);
+        
+    })
+    
+    // activity 5, task 10 i can't understand the question
+    
+</script>
+</html>

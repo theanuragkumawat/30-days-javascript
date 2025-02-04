@@ -1,5 +1,7 @@
 // Activity 1
 
+// this is a repo for javascript
+
 var num = 15
 console.log(num);
 
